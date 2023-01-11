@@ -1,0 +1,7 @@
+{
+    // markdownlint JSON(C) configuration for Catalyst Standards
+    // Do not individually set markdown lint rules in standards documents.
+  
+    // Default state for all rules
+    "default": true
+}
