@@ -5,6 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     name: Try and build with a dockerized version of mdbook and addons
     steps:
+      - uses: actions/checkout@v3
+      
       - name: Test
         id: hello
         uses: input-output-hk/catalyst-gh-mdbook-doc@v0.3
