@@ -13,7 +13,7 @@ install_crate = { crate_name = "mdbook-kroki-preprocessor", binary = "mdbook-kro
 # We check all links
 # See: https://github.com/Michael-F-Bryan/mdbook-linkcheck
 [tasks.install-mdbook-linkcheck]
-install_crate = { crate_name = "mdbook-linkcheck" }
+install_crate = { crate_name = "mdbook-linkcheck", binary = "mdbook-linkcheck", test_arg = "--help" }
 
 # We can use Admonish markup, so install that tool
 # See: https://lib.rs/crates/mdbook-admonish
@@ -42,7 +42,8 @@ run_task = { name = [
         "install-mdbook-kroki",
         "install-mdbook-regex",
         "install-mdbook-admonish",
-        "install-mdbook-open-on-gh"
+        "install-mdbook-open-on-gh",
+        "install-mdbook-linkcheck"
     ], parallel = true }
 dependencies = [
     "install-mdbook",
