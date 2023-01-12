@@ -1,0 +1,31 @@
+name: GitHub Pages (with Nix)
+
+on:
+  pull_request:
+  push:
+    branches: 
+      - "main"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: cachix/install-nix-action@v18
+        name: Install Nix
+        with:
+          github_access_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - run: nix develop --command 'mdbook build'
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./book/html
