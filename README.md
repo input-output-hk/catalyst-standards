@@ -1,4 +1,4 @@
-<!-- markdownlint-disable-file MD033 -->
+<!-- markdownlint-disable MD033 MD013 -->
 <h1 align="center">Catalyst Standards</h1>
 
 <p align="center">
@@ -6,12 +6,15 @@
     <img src="https://github.com/input-output-hk/catalyst-core/actions/workflows/ci_tests.yml/badge.svg" alt="Current CI Status." />
   </a>
    <a href="https://github.com/input-output-hk/catalyst-core#license">
-    <img src="https://img.shields.io/badge/license-MIT%2FApache--2.0-blue" alt="Catalyst Standards are released under either of Apache License, Version 2.0 or MIT license at your option.." />
+    <img src="https://img.shields.io/badge/license-MIT%2FApache--2.0-blue"
+    alt="Catalyst Standards are released under either of Apache License, Version 2.0 or MIT license at your option.."
+    />
   </a>
   <a href="https://github.com/input-output-hk/catalyst-core/blob/main/CODE_OF_CONDUCT.md">
     <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs welcome!" />
   </a>
 </p>
+<!-- markdownlint-enable MD033 MD013 -->
 
 # Content
 
@@ -41,7 +44,8 @@ CIPs.
 
 ### Prerequisites
 
-We use the [mdbook](https://rust-lang.github.io/mdBook/index.html) tool to prepare and format these standards.
+We use the [mdbook](https://rust-lang.github.io/mdBook/index.html) tool to
+prepare and format these standards.
 
 - [Rust](https://www.rust-lang.org/tools/install)
 
@@ -63,7 +67,8 @@ cargo make build-docs
 
 This will build a local copy of the documentation in `./book/html` which can be viewed.
 
-It is also possible to build a live version of the documentation which updates as edited by running:
+It is also possible to build a live version of the documentation which updates
+as edited by running:
 
 ```sh
 cargo make view-docs
@@ -90,7 +95,9 @@ enables us to review proposed format changes independently on their merits.
 
 ### Diagrams rendered by [kroki.io](https://kroki.io)
 
-See [mdBook Kroki Preprocessor](https://lib.rs/crates/mdbook-kroki-preprocessor) for details.
+See
+[mdBook Kroki Preprocessor](https://lib.rs/crates/mdbook-kroki-preprocessor) for
+details.
 
 - Editor Support
   - [VS Code](https://marketplace.visualstudio.com/items?itemName=pomdtr.markdown-kroki)
