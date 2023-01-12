@@ -18,15 +18,7 @@ jobs:
 
       - uses: taiki-e/install-action@v1
         with:
-          tool: 
-            - cargo-binstall
-            - cargo-make
-            - mdbook
-            - mdbook-linkcheck
-            - mdbook-kroki-preprocessor
-            - mdbook-admonish
-            - mdbook-regex
-            - mdbook-open-on-gh
+          tool: cargo-binstall,cargo-make,mdbook,mdbook-linkcheck,mdbook-kroki-preprocessor,mdbook-admonish,mdbook-regex,mdbook-open-on-gh
 
       - name: Setup mdBook prerequisites 
         run: |
