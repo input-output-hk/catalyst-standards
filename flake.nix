@@ -15,6 +15,7 @@
           };
 
           mdbook-kroki = (import ./nix/mdbookPlugins/kroki.nix) { inherit pkgs; };
+          mdbook-regex = (import ./nix/mdbookPlugins/regex.nix) { inherit pkgs; };
         in
         {
           devShells.default = pkgs.mkShell {
@@ -25,6 +26,7 @@
               mdbook-admonish
               mdbook-open-on-gh
               mdbook-linkcheck 
+              mdbook-regex
             ];
           };
         }
