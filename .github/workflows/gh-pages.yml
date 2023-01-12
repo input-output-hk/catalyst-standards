@@ -16,11 +16,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Error on broken links
-        run: |
-          sed 's/warning-policy = "warn"/warning-policy = "error"/g' book.toml > book.toml
-          cat book.toml
-
       - name: Build Docs
         uses: input-output-hk/catalyst-gh-mdbook-doc@v0.4
 
