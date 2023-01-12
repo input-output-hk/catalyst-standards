@@ -1,6 +1,7 @@
 name: GitHub Pages
 
 on:
+  pull_request:
   push:
     branches: 
       - "main"
@@ -17,7 +18,15 @@ jobs:
 
       - uses: taiki-e/install-action@v1
         with:
-          tool: cargo-binstall,cargo-make,mdbook
+          tool: 
+            - cargo-binstall
+            - cargo-make
+            - mdbook
+            - mdbook-linkcheck
+            - mdbook-kroki-preprocessor
+            - mdbook-admonish
+            - mdbook-regex
+            - mdbook-open-on-gh
 
       - name: Setup mdBook prerequisites 
         run: |
@@ -33,7 +42,7 @@ jobs:
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.ref == 'refs/heads/main' }}
+        if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./book/html
