@@ -1,24 +1,15 @@
-<!-- markdownlint-disable MD033 MD013 -->
-<h1 align="center">Catalyst Standards</h1>
+# Catalyst Standards
 
-<p align="center">
- <a href="https://github.com/input-output-hk/catalyst-core/actions/workflows/ci_tests.yml">
-    <img src="https://github.com/input-output-hk/catalyst-core/actions/workflows/ci_tests.yml/badge.svg" alt="Current CI Status." />
-  </a>
-   <a href="https://github.com/input-output-hk/catalyst-core#license">
-    <img src="https://img.shields.io/badge/license-MIT%2FApache--2.0-blue"
-    alt="Catalyst Standards are released under either of Apache License, Version 2.0 or MIT license at your option.."
-    />
-  </a>
-  <a href="https://github.com/input-output-hk/catalyst-core/blob/main/CODE_OF_CONDUCT.md">
-    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg" alt="PRs welcome!" />
-  </a>
-</p>
-<!-- markdownlint-enable MD033 MD013 -->
+<!-- markdownlint-disable MD013 -->
+[![GitHub Pages](https://github.com/input-output-hk/catalyst-standards/actions/workflows/gh-pages.yml/badge.svg)](https://github.com/input-output-hk/catalyst-standards/actions/workflows/gh-pages.yml)
+[![Catalyst Standards are released under either of Apache License, Version 2.0 or MIT license at your option..](https://img.shields.io/badge/license-MIT%2FApache--2.0-blue)](https://github.com/input-output-hk/catalyst-standards#license)
+[![PRs welcome!](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/input-output-hk/catalyst-standards/blob/main/CODE_OF_CONDUCT.md)
+<!-- markdownlint-enable MD013 -->
 
-# Content
+## Content
 
-- [Content](#content)
+- [Catalyst Standards](#catalyst-standards)
+  - [Content](#content)
   - [What's inside?](#whats-inside)
   - [Requirements](#requirements)
   - [Development Environment](#development-environment)
