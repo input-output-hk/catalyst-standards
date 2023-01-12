@@ -1,3 +1,6 @@
 .vscode
 
 book
+
+result*
+/.direnv/
