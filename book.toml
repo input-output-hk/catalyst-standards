@@ -89,7 +89,8 @@ cache-timeout = 43200
 # - "error" treats all warnings as errors, failing the linkcheck
 # - "ignore" will ignore warnings, suppressing diagnostic messages and allowing
 #   the linkcheck to continuing
-# We do NOT allow broken links.
+# We do NOT allow broken links in CI, but only warn in development.
+# DO NOT EDIT THIS SETTING OR YOu WILL BREAK CI.
 warning-policy = "warn"
 
 # Extra HTTP headers that must be send to certain web sites
