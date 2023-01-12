@@ -18,7 +18,7 @@ jobs:
 
       - uses: taiki-e/install-action@v1
         with:
-          tool: cargo-binstall,cargo-make,mdbook,mdbook-linkcheck,mdbook-kroki-preprocessor,mdbook-admonish,mdbook-regex,mdbook-open-on-gh
+          tool: cargo-binstall,cargo-make,mdbook,mdbook-linkcheck,mdbook-admonish,mdbook-open-on-gh
 
       - name: Setup mdBook prerequisites 
         run: |
@@ -31,6 +31,9 @@ jobs:
       - name: Build the book
         run: |
           cargo make build-docs
+          pwd
+          ls -al
+          ls -al book
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
