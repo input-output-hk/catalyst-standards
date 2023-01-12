@@ -16,25 +16,12 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - uses: taiki-e/install-action@v1
-        with:
-          tool: cargo-binstall,cargo-make,mdbook,mdbook-linkcheck,mdbook-admonish,mdbook-open-on-gh
-
-      - name: Setup mdBook prerequisites 
-        run: |
-          cargo make install-docs-prereqs
-
-      - name: Error on broken links
-        run: |
-          sed 's/warning-policy = "warn"/warning-policy = "error"/g' book.toml > book.toml
-
-      - name: Build the book
-        run: |
-          cargo make build-docs
+      - name: Build Docs
+        uses: input-output-hk/catalyst-gh-mdbook-doc@v0.4
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./book
+          publish_dir: ./book/html
