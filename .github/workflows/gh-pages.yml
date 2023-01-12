@@ -29,6 +29,10 @@ jobs:
         run: |
           cargo make install-docs-prereqs
 
+      - name: Error on broken links
+        run: |
+          sed 's/warning-policy = "warn"/warning-policy = "error"/g' book.toml > book.toml
+
       - name: Build the book
         run: |
           cargo make build-docs
