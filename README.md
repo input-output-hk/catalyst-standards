@@ -25,7 +25,7 @@
 
 ## What's inside?
 
-Standards specific to Project Catalyst.
+[Standards specific to Project Catalyst](https://input-output-hk.github.io/catalyst-standards/).
 
 This is where new catalyst standards are developed before they are promoted to
 CIPs.
