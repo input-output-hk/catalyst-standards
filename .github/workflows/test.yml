@@ -1,0 +1,10 @@
+on: [push]
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: Try and build with a dockerized version of mdbook and addons
+    steps:
+      - name: Test
+        id: hello
+        uses: input-output-hk/catalyst-gh-mdbook-doc@v0
