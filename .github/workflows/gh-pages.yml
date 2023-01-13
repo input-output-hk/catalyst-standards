@@ -19,7 +19,7 @@ jobs:
       - name: Build Docs
         uses: docker://ghcr.io/input-output-hk/catalyst-gh-tools:v0.9
         with:
-          entrypoint: cargo
+          entrypoint: /bin/cargo
           args: make build-docs-linkcheck
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
