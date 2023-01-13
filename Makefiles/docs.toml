@@ -69,8 +69,41 @@ cd ${CARGO_MAKE_WORKSPACE_WORKING_DIRECTORY}
 mdbook build
 '''
 
+# Force linkcheck to error not warn
+[tasks.force-linkcheck-error]
+workspace = false
+category = "docs"
+script_runner = "@shell"
+script = '''
+cd ${CARGO_MAKE_WORKSPACE_WORKING_DIRECTORY}
+cp book.toml book.original.toml
+cat book.original.toml
+# modify the book.toml here.
+'''
+
+# Recover book.toml back to its original state.
+[tasks.cleanup-linkcheck-error]
+workspace = false
+category = "docs"
+script_runner = "@shell"
+script = '''
+cd ${CARGO_MAKE_WORKSPACE_WORKING_DIRECTORY}
+cp book.original.toml book.toml
+rm book.original.toml
+'''
+
+
 [tasks.build-docs]
 workspace = false
 dependencies = [
     "build-mdbook"
+]
+
+
+[tasks.build-docs-linkcheck]
+workspace = false
+dependencies = [
+    "force-linkcheck-error",
+    "build-mdbook",
+    "cleanup-linkcheck-error"
 ]
