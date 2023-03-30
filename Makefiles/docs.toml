@@ -35,6 +35,10 @@ install_crate = { crate_name = "mdbook-regex", binary = "mdbook-regex", test_arg
 [tasks.install-mdbook-open-on-gh]
 install_crate = { crate_name = "mdbook-open-on-gh", binary = "mdbook-open-on-gh", test_arg = "--help" }
 
+# Allow a TOC per page.
+[tasks.install-mdbook-toc]
+install_crate = { crate_name = "mdbook-toc", binary = "mdbook-toc", test_arg = "--help" }
+
 
 [tasks.install-docs-prereqs]
 workspace = false
@@ -43,7 +47,8 @@ run_task = { name = [
         "install-mdbook-regex",
         "install-mdbook-admonish",
         "install-mdbook-open-on-gh",
-        "install-mdbook-linkcheck"
+        "install-mdbook-linkcheck",
+        "install-mdbook-toc"
     ], parallel = true }
 dependencies = [
     "install-mdbook",
